@@ -66,7 +66,7 @@ USER ${USER}
 
 COPY . .
 
-RUN buildozer init && buildozer android debug || /bin/true
+RUN buildozer init && buildozer android debug || cp /home/user/hostcwd/.buildozer/android/platform/build/dists/myapp/bin/MyApplication-0.1-debug.apk ${WORK_DIR}
 
 CMD tail -f /var/log/faillog
 
